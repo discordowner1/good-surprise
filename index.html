@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jef Jumpscare</title>
+<style>
+  body, html {
+    margin: 0; padding: 0;
+    overflow: hidden;
+    background: black;
+  }
+  #jumpscare {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: black no-repeat center center/cover;
+    z-index: 9999;
+  }
+</style>
+</head>
+<body>
+
+<div id="jumpscare"></div>
+
+<script>
+  // Jumpscare image and sound URLs
+  const jumpscareImage = 'https://i.imgur.com/W0Yb6kA.png'; // scary face
+  const jumpscareSound = 'https://www.myinstants.com/media/sounds/creepy-scream.mp3'; // scream sound
+
+  const jumpscareDiv = document.getElementById('jumpscare');
+  const audio = new Audio(jumpscareSound);
+
+  setTimeout(() => {
+    jumpscareDiv.style.backgroundImage = `url(${jumpscareImage})`;
+    jumpscareDiv.style.display = 'block';
+    audio.play();
+  }, 3000);
+</script>
+
+</body>
+</html>
